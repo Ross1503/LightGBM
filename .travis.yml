@@ -11,7 +11,7 @@ os:
   - osx
 arch:
   - amd64
-  - arm64-graviton2
+  - arm64
 dist: focal
 osx_image: xcode12
 
@@ -63,6 +63,8 @@ before_install:
   - export OPENCL_VENDOR_PATH=$AMDAPPSDK_PATH/etc/OpenCL/vendors
 
 install:
+  - sudo apt-get install zlib1g-dev
+  - apt-get install zlib1g-dev
   - bash .ci/setup.sh
 
 script:

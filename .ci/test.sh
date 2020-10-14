@@ -147,7 +147,7 @@ elif [[ $TASK == "mpi" ]]; then
     fi
     cmake -DUSE_MPI=ON -DUSE_DEBUG=ON ..
 else
-    cmake ..
+    cmake .. -DCC=/usr/local/opt/llvm/bin/clang -DCXX=/usr/local/opt/llvm/bin/clang++ -DLDFLAGS="-L/usr/local/opt/llvm/lib" -DCPPFLAGS="-I/usr/local/opt/llvm/include"
 fi
 
 make _lightgbm -j4 || exit -1

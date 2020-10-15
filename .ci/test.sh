@@ -106,7 +106,7 @@ elif [[ $TASK == "bdist" ]]; then
             cp dist/lightgbm-$LGB_VER-py2.py3-none-macosx*.whl $BUILD_ARTIFACTSTAGINGDIRECTORY
         fi
     else
-        cd $BUILD_DIRECTORY/python-package && python setup.py bdist_wheel --plat-name=manylinux1_x86_64 --universal || exit -1
+        cd $BUILD_DIRECTORY/python-package && python setup.py bdist_wheel --plat-name=manylinux1_aarch64 --universal || exit -1
         if [[ $AZURE == "true" ]]; then
             cp dist/lightgbm-$LGB_VER-py2.py3-none-manylinux1_x86_64.whl $BUILD_ARTIFACTSTAGINGDIRECTORY
         fi
@@ -147,7 +147,7 @@ elif [[ $TASK == "mpi" ]]; then
     fi
     cmake -DUSE_MPI=ON -DUSE_DEBUG=ON ..
 else
-    cmake .. -DCC=/usr/local/opt/llvm/bin/clang -DCXX=/usr/local/opt/llvm/bin/clang++ -DLDFLAGS="-L/usr/local/opt/llvm/lib" -DCPPFLAGS="-I/usr/local/opt/llvm/include"
+    cmake ..
 fi
 
 make _lightgbm -j4 || exit -1

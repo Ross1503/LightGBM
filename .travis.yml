@@ -21,7 +21,7 @@ env:
   matrix:
     - TASK=regular PYTHON_VERSION=3.6
     - TASK=regular PYTHON_VERSION=3.6
-    - TASK=sdist PYTHON_VERSION=2.7
+    - TASK=sdist PYTHON_VERSION=3.6
     - TASK=bdist
     - TASK=if-else
     - TASK=lint

@@ -63,7 +63,7 @@ before_install:
   - export OPENCL_VENDOR_PATH=$AMDAPPSDK_PATH/etc/OpenCL/vendors
 
 install:
-  - sudo apt-get install libomp-dev
+  - sudo apt-get install libomp-dev>=4.5
   - bash .ci/setup.sh
 
 script:

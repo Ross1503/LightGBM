@@ -63,7 +63,6 @@ before_install:
   - export OPENCL_VENDOR_PATH=$AMDAPPSDK_PATH/etc/OpenCL/vendors
 
 install:
-  - sudo apt-get install zlib1g-dev
   - sudo apt-get install libomp-dev
   - bash .ci/setup.sh
 
